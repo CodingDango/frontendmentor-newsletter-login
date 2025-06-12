@@ -1,9 +1,12 @@
 :root {
-    --Red: hsl(4, 100%, 67%);
-    --Blue-800: hsl(234, 29%, 20%);
-    --Blue-700: hsl(235, 18%, 26%);
-    --Grey: hsl(0, 0%,58%);
-    --White: hsl(0, 0%, 100%);
+    --red: hsl(4, 100%, 67%);
+    --red-placeholder: hsl(3, 100%, 89%);
+    --red-light: hsl(3, 100%, 93%);
+    --blue-800: hsl(234, 29%, 20%);
+    --blue-700: hsl(235, 18%, 26%);
+    --grey: hsl(0, 0%,58%);
+    --transparent-grey: hsla(0, 0%, 58%, 0.6);
+    --white: hsl(0, 0%, 100%);
 }
 
 @font-face {
@@ -12,17 +15,199 @@
 }
 
 
-
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
+
+
 body {
     font-family: "Roboto Regular";
+    background-color: var(--blue-700);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.newsletter > div {
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+}
 
+/* This is your original .newsletter class, but with the fix */
+.newsletter {
+    background-color: var(--white);
+    width: 100%;
+    padding: 20px;
+    flex-grow: 1;
+
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+
+}
+
+.newsletter__img {
+    border-radius: 20px;
+    object-fit: fill;
+    background: url("assets/images/illustration-sign-up-mobile.svg");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.newsletter__content {
+    flex-grow: 1;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.newsletter__content__header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.newsletter__content__header h1 {
+    font-size: 2.5rem;
+}
+
+.newsletter__content  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.newsletter__content ul div{
+    display: flex;
+    gap: 1rem;
+    align-items: start;
+}
+
+.newsletter__content form {
+    margin-top: 30px;
+}
+
+.newsletter__content form label
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter__content form label div {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.newsletter__form__input-error {
+    width: 100%;
+    height: 3rem;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+
+    border: 2px solid var(--red);
+    color: var(--red);
+    background-color: var(--red-placeholder);
+}
+
+.newsletter__form__input-error::placeholder {
+    color: var(--red);
+}
+
+.newsletter__form__input-error:focus {
+    outline: none;
+    width: 100%;
+    height: 3rem;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    border: 2px solid var(--red);
+}
+
+.newsletter__form__input {
+    width: 100%;
+    height: 3rem;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    border: 2px solid var(--transparent-grey);
+}
+
+.newsletter__form__input:focus {
+    outline: none;
+    border-color: var(--blue-700);
+}    
+
+.newsletter__form__input::placeholder {
+    color: var(--grey);
+}
+
+.newsletter__content form button {
+    margin-top: 30px;
+    width: 100%;
+    font-size: 1.05rem;
+    color: var(--white);
+    padding: 20px 30px;
+    background-color: var(--blue-800);
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+}
+
+
+
+/* Desktop media queries */
+@media (min-width: 586px)
+{
+    main {
+        padding: 40px 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .newsletter {
+        flex-grow: 0;
+        height: auto;
+        border-radius: 20px;
+        width: fit-content;
+        max-width: 900px;
+        gap: 30px;
+        padding: 20px;
+        
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "left right";        
+    }
+
+    .newsletter__content {
+        grid-area: left;
+    }
+
+    .newsletter__img {
+        grid-area: right;
+        background: url("assets/images/illustration-sign-up-desktop.svg");
+        background-position: center;
+        background-repeat: repeat;
+        background-size: cover;
+    }
+
+    .newsletter__img img {
+        height: 100%;
+        background-image: url("assets/images/illustration-sign-up-desktop.svg");
+    }
+}
+
+@media (max-width: 400px) {
+    .newsletter {
+        padding: 20px;
+    }
 }

@@ -6,47 +6,52 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="./style.css">
+  <script src="script.js"></script>
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
 
 </head>
 <body>
   <main>
     <div class="newsletter">
-      <div>
-        <div>
-          <img src="assets/images/illustration-sign-up-desktop.svg">
-        </div>
-        <h1>Stay updated!</h1>
-        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+      <div class="newsletter__img">
+        <!-- <img src="assets/images/illustration-sign-up-mobile.svg"> -->
+      </div>
+      <div class="newsletter__content">
         
-        <ul>
-          <li>
-            <div>
-              <img src="assets/images/icon-list.svg">
-              <p>Product discovery and building what matters</p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <img src="assets/images/icon-list.svg">
-              <p>Measuring to ensure updates are a success</p>
-            </div>
-          </li>
-          <li>
-            <div>
-              <img src="assets/images/icon-list.svg">
-              <p>And much more!</p>
-            </div>
-          </li>
-        </ul>
+        <div class="newsletter__content__header">
+          <h1>Stay updated!</h1>
+          <p>Join 60,000+ product managers receiving monthly updates on:</p>
+        </div>
+        <div class="newsletter__content__main">
+          <ul>
+            <li>
+              <div>
+                <img src="assets/images/icon-list.svg">
+                <p>Product discovery and building what matters</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="assets/images/icon-list.svg">
+                <p>Measuring to ensure updates are a success</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="assets/images/icon-list.svg">
+                <p>And much more!</p>
+              </div>
+            </li>
+          </ul>
 
-        <form method="post" action="#">
-          <label>
-            <div>Email address</div>
-            <input placeholder="example@gmail.com">
-          </label>
-          <button type="submit">Subscribe to monthly newsletter</button>
-        </form>
+          <form class="newsletter__form" method="post" action="#" novalidate>
+            <label>
+              <div>Email address</div>
+              <input class="newsletter__form__input"  placeholder="example@gmail.com" type="email">
+            </label>
+            <button type="submit">Subscribe to monthly newsletter</button>
+          </form>
+        </div>
       </div>
     </div>
   </main>
