@@ -37,7 +37,7 @@ function notifyUserSuccess(email) {
           </div>
             <button class="newsletter__success-btn newsletter-btn" type="submit">
             <div class="newsletter-btn__bg"></div>
-            <div class="newsletter-btn__text">Dissmiss Message</div>
+            <div class="newsletter-btn__text">Dismiss Message</div>
             </button>
          </div>
     `;
