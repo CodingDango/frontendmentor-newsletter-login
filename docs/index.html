@@ -12,45 +12,49 @@
 </head>
 <body>
   <main>
-    <div class="newsletter">
-      <div class="newsletter__img">
-        <!-- <img src="assets/images/illustration-sign-up-mobile.svg"> -->
-      </div>
-      <div class="newsletter__content">
-        
-        <div class="newsletter__content__header">
-          <h1>Stay updated!</h1>
-          <p>Join 60,000+ product managers receiving monthly updates on:</p>
-        </div>
-        <div class="newsletter__content__main">
-          <ul>
-            <li>
-              <div>
-                <img src="assets/images/icon-list.svg">
-                <p>Product discovery and building what matters</p>
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src="assets/images/icon-list.svg">
-                <p>Measuring to ensure updates are a success</p>
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src="assets/images/icon-list.svg">
-                <p>And much more!</p>
-              </div>
-            </li>
-          </ul>
+    <div class="newsletter-component"> 
+      <div class="newsletter"> 
+        <div class="newsletter__img"></div>
+        <div class="newsletter__content">
+          <div class="newsletter__content__header">
+            <h1 class="newsletter__text-header">Stay updated!</h1>
+            <p>Join 60,000+ product managers receiving monthly updates on:</p>
+          </div>
+          <div class="newsletter__content__main">
+            <ul>
+              <li>
+                <div>
+                  <img src="assets/images/icon-list.svg">
+                  <p>Product discovery and building what matters</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="assets/images/icon-list.svg">
+                  <p>Measuring to ensure updates are a success</p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="assets/images/icon-list.svg">
+                  <p>And much more!</p>
+                </div>
+              </li>
+            </ul>
 
-          <form class="newsletter__form" method="post" action="#" novalidate>
-            <label>
-              <div>Email address</div>
-              <input class="newsletter__form__input"  placeholder="example@gmail.com" type="email">
-            </label>
-            <button type="submit">Subscribe to monthly newsletter</button>
-          </form>
+            <form class="newsletter__form" method="post" action="#" novalidate>
+              <label>
+                <div class="newsletter__form__label-error-msg">
+                  <div>Email address</div>
+                  <div class="error-state-msg hidden">Invalid email</div>
+                </div>
+                <input class="newsletter__form__input"  placeholder="example@gmail.com" type="email">
+              </label>
+              <button class="newsletter-btn" type="submit">
+                <div class="newsletter-btn__bg"></div>
+                <div class="newsletter-btn__text">Subscribe to monthly newsletter</div>
+              </button>
+            </form>
         </div>
       </div>
     </div>
